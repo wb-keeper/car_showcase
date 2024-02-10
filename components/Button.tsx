@@ -1,7 +1,12 @@
 "use client";
-import React from "react";
+import React, { MouseEventHandler } from "react";
 import Image from "next/image";
-const Button = () => {
+interface ButtonProps {
+  title: string;
+  containerStyles?: string;
+  handleClick: MouseEventHandler<HTMLButtonElement>;
+}
+const Button = ({ title, containerStyles, handleClick }: ButtonProps) => {
   return (
     <button
       disabled={false}
