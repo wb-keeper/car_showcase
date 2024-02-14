@@ -1,5 +1,9 @@
 import { FC } from "react";
 import Image from "next/image";
+import { footerLinks } from "@/constants";
+import { allowedDisplayValues } from "next/dist/compiled/@next/font/dist/constants";
+import Link from "next/link";
+
 interface FooterProps {}
 
 const Footer: FC<FooterProps> = () => {
@@ -18,7 +22,37 @@ const Footer: FC<FooterProps> = () => {
             Carhub 2024 <br /> All rights reserved &copy;{" "}
           </p>
         </div>
-        <div className="footer__links"></div>
+        <div className="footer__links">
+          {footerLinks.map((link) => {
+            return (
+              <div className="footer__link" key={link.title}>
+                <h3 className="font-bold">{link.title}</h3>
+                {link.links.map((item) => {
+                  return (
+                    <Link
+                      href={item.url}
+                      key={item.title}
+                      className="text-gray-500"
+                    >
+                      {item.title}
+                    </Link>
+                  );
+                })}
+              </div>
+            );
+          })}
+        </div>
+      </div>
+      <div className="flex justify-between items-center flex-wrap mt-10 border-t border-gray-100 sm:px-16 px-6 py-10">
+        <p>@2024 CarHub. All Rights Reserved</p>
+        <div className="footer__copyrights-link">
+          <Link href="/" className="text-gray-500">
+            Privacy Policy
+          </Link>
+          <Link href="/" className="text-gray-500">
+            Terms of Use
+          </Link>
+        </div>
       </div>
     </footer>
   );
