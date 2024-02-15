@@ -1,7 +1,5 @@
 import Image from "next/image";
-import Hero from "@/components/Hero";
-import CustomFilter from "@/components/CustomFilter";
-import SearchBar from "@/components/SearchBar";
+import { CustomFilter, Hero, SearchBar } from "@/components";
 
 export default function Home() {
   return (
