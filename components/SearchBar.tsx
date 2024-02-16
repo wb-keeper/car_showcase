@@ -1,6 +1,6 @@
 "use client";
 
-import { FC } from "react";
+import { FC, useState } from "react";
 import { SearchManufacturer } from "@/components/index";
 
 const handleSearch = () => {
@@ -9,10 +9,14 @@ const handleSearch = () => {
 interface SearchBarProps {}
 
 const SearchBar: FC<SearchBarProps> = () => {
+  const [manufacturer, setManufacturer] = useState("");
   return (
     <form className="searchbar" onSubmit={handleSearch}>
       <div className="searchbar__item">
-        <SearchManufacturer />
+        <SearchManufacturer
+          manufacturer={manufacturer}
+          setManufacturer={setManufacturer}
+        />
       </div>
     </form>
   );
