@@ -5,13 +5,19 @@ interface ButtonProps {
   title: string;
   containerStyles?: string;
   handleClick: MouseEventHandler<HTMLButtonElement>;
-  btnType: "button" | "submit";
+  btnType?: "button" | "submit";
+  textStyles?: string;
+  rightIcon?: string;
+  isDisabled?: boolean;
 }
 const Button = ({
   title,
   containerStyles,
   handleClick,
   btnType,
+  textStyles,
+  rightIcon,
+  isDisabled,
 }: ButtonProps) => {
   return (
     <button
@@ -20,7 +26,7 @@ const Button = ({
       className={`custom-btn ${containerStyles}`}
       onClick={handleClick}
     >
-      <span className="flex-1">{title}</span>
+      <span className={`flex-1 ${textStyles}}`}>{title}</span>
     </button>
   );
 };
