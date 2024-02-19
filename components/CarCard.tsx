@@ -3,8 +3,8 @@
 import { FC, useState } from "react";
 import Image from "next/image";
 import { calculateCarRent } from "@/utils";
-import { Button } from "@/components/index";
-interface CarCardProps {
+import { Button, CarDetails } from "@/components/index";
+export interface CarCardProps {
   car: {
     city_mpg: number;
     class: string;
@@ -71,6 +71,11 @@ const CarCard: FC<CarCardProps> = ({ car }) => {
           />
         </div>
       </div>
+      <CarDetails
+        isOpen={isOpen}
+        closeModal={() => setIsOpen(false)}
+        car={car}
+      />
     </div>
   );
 };
