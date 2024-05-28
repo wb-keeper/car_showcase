@@ -53,4 +53,8 @@ export const deleteSearchParams = (type: string) => {
   return newPathname;
 };
 
-export const generateCarImageUrl = (car: CarCardProps, angle?: string) => {};
+export const generateCarImageUrl = (car: CarCardProps["car"], angle?: string) => {
+  const url = new URL('https://cdn.imagin.studio/getimage')
+  const {make,year,model} = car
+  url.searchParams.append('customer','hrjavascript-mastery')
+};
