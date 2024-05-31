@@ -2,7 +2,7 @@
 
 import { FC, useState } from "react";
 import Image from "next/image";
-import { calculateCarRent } from "@/utils";
+import { calculateCarRent, generateCarImageUrl } from "@/utils";
 import { Button, CarDetails } from "@/components/index";
 export interface CarCardProps {
   car: {
@@ -25,6 +25,7 @@ const CarCard: FC<CarCardProps> = ({ car }) => {
   const [isOpen, setIsOpen] = useState(false);
   const { city_mpg, drive, make, year, model, transmission } = car;
   const carRent = calculateCarRent(city_mpg, year);
+
   return (
     <div className="car-card group">
       <h2 className="car-card__content-title">
