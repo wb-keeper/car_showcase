@@ -10,6 +10,7 @@ interface SearchBarProps {}
 
 const SearchBar: FC<SearchBarProps> = () => {
   const [manufacturer, setManufacturer] = useState("");
+  const handleSearch = () => {};
   return (
     <form className="searchbar" onSubmit={handleSearch}>
       <div className="searchbar__item">
@@ -17,6 +18,7 @@ const SearchBar: FC<SearchBarProps> = () => {
           manufacturer={manufacturer}
           setManufacturer={setManufacturer}
         />
+        <SearchButton />
       </div>
     </form>
   );
