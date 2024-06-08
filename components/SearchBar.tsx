@@ -21,6 +21,7 @@ const SearchButton = ({ otherClasses }: { otherClasses: string }) => (
 );
 const SearchBar: FC<SearchBarProps> = () => {
   const [manufacturer, setManufacturer] = useState("");
+  const [model, setModel] = useState("");
   const handleSearch = () => {};
   return (
     <form className="searchbar" onSubmit={handleSearch}>
@@ -38,6 +39,12 @@ const SearchBar: FC<SearchBarProps> = () => {
           width={25}
           height={25}
           className="absolute w-[20px] h-[20px] md-4"
+        />
+        <input
+          type="text"
+          name="model"
+          value={model}
+          onChange={(e) => setModel(e.target.value)}
         />
       </div>
     </form>
