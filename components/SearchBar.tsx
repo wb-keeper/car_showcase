@@ -5,9 +5,6 @@ import { SearchManufacturer } from "@/components/index";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 
-const handleSearch = () => {
-  return;
-};
 interface SearchBarProps {}
 const SearchButton = ({ otherClasses }: { otherClasses: string }) => (
   <button type="submit" className={`-ml-3 z-10 ${otherClasses}`}>
@@ -29,6 +26,7 @@ const SearchBar: FC<SearchBarProps> = () => {
     if (manufacturer === "" && model === "") {
       return alert("Please fill in the search bar");
     }
+    updateSearchParams(model.toLowerCase(), manufacturer.toLowerCase());
   };
   const updateSearchParams = (model: string, manufacturer: string) => {
     const searchParams = new URLSearchParams(window.location.search);
