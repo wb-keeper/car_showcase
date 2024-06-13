@@ -1,6 +1,7 @@
 import { CarCardProps } from "@/components/CarCard";
+import { SearchParamsProps } from "@/app/page";
 
-export async function fetchCars(filter: any) {
+export async function fetchCars(filter: SearchParamsProps) {
   const headers = {
     "X-RapidAPI-Key": "73270bb7eamsh9e55a5460de75fbp1769d8jsna77335678dff",
     "X-RapidAPI-Host": "cars-by-api-ninjas.p.rapidapi.com",
